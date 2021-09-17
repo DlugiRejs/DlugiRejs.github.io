@@ -1,0 +1,258 @@
+/*
+:root {
+    --alpine-goat: #F48120; color
+    --sodalite-blue: #35A0B1; Parent bg
+    --steely-grey: #0C2427; bg
+    --bone: #AF7BAF; border
+} */
+
+@keyframes glider {
+        0% {
+            opacity: 0.5;
+            transform: scale(0.5);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(0.9);
+        }
+        100% {
+            opacity: 0.5;
+            transform: scale(0.5);
+        }
+    }
+
+@keyframes rotation {
+    from {
+        transform: rotate(0turn);
+        /*transform: scale(0.5);*/
+    }
+
+    50% {
+        transform: rotate(0.5turn);
+        /*transform: scale(1);*/
+    }
+
+    to {
+        transform: rotate(1turn);
+        /*transform: scale(0.5);*/
+    }
+}
+@font-face {
+        font-family: 'Carter_One';
+        src: url('../fonts/Carter_One/CarterOne-Regular.ttf') format('truetype');
+}
+@font-face {
+        font-family: 'Gochi_Hand';
+        src: url('../fonts/Gochi_Hand/GochiHand-Regular.ttf') format('truetype');
+}
+
+html {
+    font-size: 16px;
+    background-color: #35A0B1;
+}
+/*--------------header-------------------*/
+header {
+    position: fixed;
+    right: 5%;
+    top: 0;
+    margin: 10px auto 30px auto;
+    width: 90%;
+    height: 100px;
+    background-color:#0C2427;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icon {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github {
+    width: 60px;
+    height: 60px;
+    animation-name: glider;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+}
+
+.email {
+    width: 60px;
+    height: 60px;
+    animation-name: rotation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+}
+.icon p {
+    font-family: Carter_One;
+    font-size: 2rem;
+    color: #F48120;
+    cursor: pointer;
+}
+
+/*------------------------main-----------------------------*/
+/*----------------------about--------------------------*/
+.about {
+    margin: 130px auto 0px auto;
+    width: 90%;
+    height: 360px;
+    background-color:#0C2427;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 30px 0;
+}
+
+.desc {
+    grid-area: 4 / 1 / span 3 / span 1;
+    font-family: Gochi_Hand;
+    color: #F48120;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.desc h1 {
+    width: 90%;
+    font-size: 2rem;
+    line-height: 2;
+}
+
+.desc h3 {
+    width: 90%;
+    font-size: 1rem;
+    line-height: 2;
+}
+
+.about figure {
+    grid-area: 1 / 1 / span 2 / span 1;
+    position: relative;
+    /*width: 500px;
+    height: 500px;*/
+    background-image: url(../images/programmer.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center 100%;
+}
+
+figure.eye {
+    display: inherit;
+    opacity: 0;
+    width: 50px;
+    height: 70px;
+    position: absolute;
+    top: 100px;
+    left: 170px;
+    /*background-color: transparent;*/
+    background-image: url(../images/eye.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    /*animation-name: showUp;
+    animation-duration: 0.5s;*/
+    transition-property: all;
+    transition-duration: 100ms;
+    transition-delay: 1s;
+}
+
+figure.bomb {
+    display: inherit;
+    opacity: 0;
+    width: 50px;
+    height: 70px;
+    position: absolute;
+    top: 200px;
+    left: 170px;
+    /*background-color: transparent;*/
+    background-image: url(../images/bomb.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    /*animation-name: showUp;
+    animation-duration: 0.5s;*/
+    transition-property: all;
+    transition-duration: 1s;
+    transition-delay: 0s;
+}
+.button_area {
+    grid-area: 3 / 1 / span 1 / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button {
+    width: 150px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F48120;
+    border: 2px solid white;
+    color: #0C2427;
+    font-family: Carter_One;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #F8C296;
+}
+
+.button:active {
+    border-color: #0C2427;
+}
+
+@media only screen and (min-width: 900px){
+.icon p {
+    font-size: 3rem;
+}
+.github {
+    width: 80px;
+    height: 80px;
+}
+
+.email {
+    width: 80px;
+    height: 80px;
+}
+
+.about {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.desc {
+    grid-area: 1 / 1 / span 3 / span 1;
+    justify-content: flex-start;
+}
+
+.about figure {
+   grid-area: 1 / 2 / span 2 / span 1;
+}
+
+.button_area {
+    grid-area: 3 / 2 / span 1 / span 1;
+}
+
+.button {
+    width: 200px;
+    height: 50px;
+}
+
+.desc h1 {
+    font-size: 3rem;
+}
+
+.desc h3 {
+    font-size: 2rem;
+}
+}
