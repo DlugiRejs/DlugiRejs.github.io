@@ -1,39 +1,42 @@
-let girlPic = document.getElementById('girlPic');
-let eyePic = document.getElementById('eyePic');
+let mePic = document.getElementById('mePic');
+let glassesPic = document.getElementById('glassesPic');
 let bombPic = document.getElementById('bombPic');
+let bombButton = document.getElementById('bombButton');
 let counter = 0;
-let eyeInterval;
+let glassesInterval;
 
 function darkBackground() {
-    girlPic.style.backgroundImage = 'none';
-    girlPic.style.backgroundColor = 'black';
+    bombPic.style.opacity = '0';
+    mePic.style.backgroundImage = 'none';
+    mePic.style.backgroundColor = '#0C2427';
 }
 
-function eyeBlinking() {
+function glassesBlinking() {
+    glassesPic.style.opacity = '1';
     counter += 1;
     console.log(counter);
-    if (counter >= 5) {
-        eyePic.style.display = 'none';
-        clearInterval(eyeInterval);
+    if (counter >= 7) {
+        glassesPic.style.display = 'inherit';
+        clearInterval(glassesInterval);
     } else {
-        if (eyePic.style.display === 'none') {
-            eyePic.style.display = 'inherit';
+        if (glassesPic.style.display === 'none') {
+            glassesPic.style.display = 'inherit';
         } else {
-            eyePic.style.display = 'none';
+            glassesPic.style.display = 'none';
         }
     }
 }
-girlPic.onclick = (e) => {
-    eyePic.style.opacity = '1';
+bombButton.onclick = (e) => {
+    bombButton.disabled = true;
     bombPic.style.opacity = '1';
     setTimeout(darkBackground, 3000);
     setTimeout(() => {
-        eyeInterval = setInterval(eyeBlinking, 1000);
+        glassesInterval = setInterval(glassesBlinking, 1000);
     }
         , 4000);
 }
-girlPic.onmouseout = (e) => {
+/*girlPic.onmouseout = (e) => {
     eyePic.style.opacity = '0';
     bombPic.style.opacity = '0';
-}
+}*/
 //girlPic.onclick = (e) => console.log("Jea");

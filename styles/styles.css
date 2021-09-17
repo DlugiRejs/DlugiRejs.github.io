@@ -62,6 +62,11 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+a {
+    display: block;
 }
 
 .icon {
@@ -126,12 +131,14 @@ header {
     width: 90%;
     font-size: 2rem;
     line-height: 2;
+    text-align: center;
 }
 
 .desc h3 {
     width: 90%;
     font-size: 1rem;
     line-height: 2;
+    text-align: center;
 }
 
 .about figure {
@@ -143,22 +150,20 @@ header {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center 100%;
+    display: flex;
+    justify-content: center;
 }
 
-figure.eye {
+figure.glasses {
     display: inherit;
     opacity: 0;
-    width: 50px;
-    height: 70px;
+    width: 70px;
+    height: 30px;
     position: absolute;
-    top: 100px;
-    left: 170px;
-    /*background-color: transparent;*/
-    background-image: url(../images/eye.png);
+    top: 20%;
+    background-image: url(../images/glasses.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    /*animation-name: showUp;
-    animation-duration: 0.5s;*/
     transition-property: all;
     transition-duration: 100ms;
     transition-delay: 1s;
@@ -168,18 +173,14 @@ figure.bomb {
     display: inherit;
     opacity: 0;
     width: 50px;
-    height: 70px;
+    height: 50px;
     position: absolute;
-    top: 200px;
-    left: 170px;
-    /*background-color: transparent;*/
+    bottom: 10px;
     background-image: url(../images/bomb.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    /*animation-name: showUp;
-    animation-duration: 0.5s;*/
     transition-property: all;
-    transition-duration: 1s;
+    transition-duration: 500ms;
     transition-delay: 0s;
 }
 .button_area {
@@ -211,6 +212,12 @@ figure.bomb {
     border-color: #0C2427;
 }
 
+.button:disabled {
+    color: rgb(180, 170, 170);
+    background-color: #F8C296;
+    border-color: #0C2427;
+}
+
 @media only screen and (min-width: 900px){
 .icon p {
     font-size: 3rem;
@@ -239,6 +246,16 @@ figure.bomb {
    grid-area: 1 / 2 / span 2 / span 1;
 }
 
+figure.bomb {
+    width: 100px;
+    height: 100px;
+}
+
+figure.glasses {
+    width: 100px;
+    height: 50px;
+}
+
 .button_area {
     grid-area: 3 / 2 / span 1 / span 1;
 }
@@ -250,9 +267,11 @@ figure.bomb {
 
 .desc h1 {
     font-size: 3rem;
+    text-align: left;
 }
 
 .desc h3 {
     font-size: 2rem;
+    text-align: left;
 }
 }
