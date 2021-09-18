@@ -14,7 +14,7 @@ function darkBackground() {
 function glassesBlinking() {
     glassesPic.style.opacity = '1';
     counter += 1;
-    console.log(counter);
+    //console.log(counter);
     if (counter >= 7) {
         glassesPic.style.display = 'inherit';
         clearInterval(glassesInterval);
@@ -29,11 +29,11 @@ function glassesBlinking() {
 bombButton.onclick = (e) => {
     bombButton.disabled = true;
     bombPic.style.opacity = '1';
-    setTimeout(darkBackground, 3000);
+    setTimeout(darkBackground, 1500);
     setTimeout(() => {
         glassesInterval = setInterval(glassesBlinking, 1000);
     }
-        , 4000);
+        , 1000);
 }
 /*girlPic.onmouseout = (e) => {
     eyePic.style.opacity = '0';
