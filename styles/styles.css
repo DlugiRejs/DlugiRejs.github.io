@@ -292,6 +292,10 @@ figure.portfolio:hover {
     background-color: #0C2427;
 }
 
+.pokemons-wars {
+    background-image: url(../images/portfolio/pokemonsWars.png);
+}
+
 .reddit-client {
     background-image: url(../images/portfolio/redditClient.png);
 }
